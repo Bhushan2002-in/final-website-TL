@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free eBook - 101 Tips for Small Business Owners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-900: #0a3c99;
+      --blue-700: #0f5fc7;
+      --blue-100: #e6f0ff;
+      --yellow-400: #f7c948;
+      --yellow-200: #fdecb5;
+      --yellow-100: #fff7de;
+      --white: #ffffff;
+      --text-main: #0b234a;
+      --text-muted: #4a5a7a;
+      --shadow: 0 14px 30px rgba(12, 27, 51, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(120% 120% at 100% 0%, rgba(15, 95, 199, 0.06), transparent 55%), #f8fbff;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Navigation (mirrors home) */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15, 95, 199, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      gap: 12px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue-900);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      height: 54px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: flex-end;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .menu-link {
+      position: relative;
+      color: inherit;
+      padding: 8px 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+      transition: color 150ms ease;
+    }
+
+    .menu-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-700), var(--yellow-400));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 160ms ease;
+    }
+
+    .menu-link:hover {
+      color: var(--blue-700);
+    }
+
+    .menu-link:hover::after,
+    .menu-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .dropdown-toggle::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      box-shadow: 0 6px 12px rgba(12, 27, 51, 0.12);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(12, 27, 51, 0.12);
+      padding: 8px;
+      display: grid;
+      gap: 2px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 120ms ease;
+      border: 1px solid rgba(12, 27, 51, 0.05);
+      z-index: 5;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .dropdown-menu a:hover {
+      background: var(--yellow-100);
+      color: var(--blue-900);
+    }
+
+    .cta-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      justify-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--yellow-200);
+      color: var(--blue-900);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      margin: 12px 0 10px;
+      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+      color: var(--blue-900);
+      letter-spacing: -0.6px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      margin: 0 0 14px;
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .panel {
+      background: #fff;
+      border-radius: 18px;
+      padding: 12px;
+      border: 1px solid rgba(12, 27, 51, 0.06);
+      box-shadow: var(--shadow);
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section h2 {
+      margin: 0 0 10px;
+      color: var(--blue-900);
+      font-size: 2rem;
+      letter-spacing: -0.3px;
+      text-align: center;
+    }
+
+    .section p.section-lead {
+      margin: 0 0 22px;
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 1.02rem;
+    }
+
+    .tips-section {
+      background: linear-gradient(180deg, #f7faff 0%, #f1f5fb 100%);
+      padding: 48px 0 56px;
+    }
+
+    .tips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: stretch;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .content-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      box-shadow: 0 12px 28px rgba(12, 27, 51, 0.08);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 12px;
+      align-items: start;
+    }
+
+    .content-card h3 {
+      margin: 0;
+      color: var(--blue-900);
+    }
+
+    .content-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      grid-column: 1 / -1;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.25rem;
+      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.16);
+    }
+
+    .tip-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(12, 27, 51, 0.06);
+      box-shadow: 0 16px 32px rgba(12, 27, 51, 0.08);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px 14px;
+      align-items: start;
+      flex: 1 1 300px;
+      max-width: 360px;
+      min-width: 260px;
+    }
+
+    .tip-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      box-shadow: 0 12px 22px rgba(12, 27, 51, 0.18);
+    }
+
+    .tip-card h3 {
+      margin: 0;
+      color: var(--blue-900);
+      letter-spacing: -0.2px;
+    }
+
+    .tip-card p {
+      grid-column: 1 / -1;
+      margin: 2px 0 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Form */
+    .form-wrap {
+      background: #f4f7fc;
+      border-radius: 18px;
+      padding: 22px;
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      box-shadow: 0 16px 34px rgba(12, 27, 51, 0.12);
+      display: grid;
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .form-wrap h3 {
+      margin: 0;
+      color: var(--blue-900);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    label {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(12, 27, 51, 0.12);
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: rgba(15, 95, 199, 0.5);
+      box-shadow: 0 0 0 3px rgba(15, 95, 199, 0.15);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, border-color 150ms ease;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-900));
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(12, 27, 51, 0.22);
+    }
+
+    /* Footer */
+    .footer {
+      background: #0c3b67;
+      color: rgba(255, 255, 255, 0.88);
+      padding: 48px 0 28px;
+      margin-top: 32px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 26px;
+      align-items: start;
+    }
+
+    .footer-col h4 {
+      margin: 0 0 12px 0;
+      font-size: 1.1rem;
+      color: #fff;
+      letter-spacing: -0.1px;
+    }
+
+    .footer-brand img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-text {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--yellow-400);
+    }
+
+    .contact-list-footer {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 700;
+    }
+
+    .contact-item-footer {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .contact-icon {
+      color: var(--yellow-400);
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .social-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--yellow-400);
+      display: grid;
+      place-items: center;
+      color: #0c3b67;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      background: var(--yellow-400);
+      color: #0c3b67;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer-cta:hover {
+      transform: translateY(-1px);
+    }
+
+    .footer-divider {
+      margin: 24px 0 18px;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .menu {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: 0 8px 18px rgba(12, 27, 51, 0.12);
+        background: #fff;
+        border: 1px solid rgba(12, 27, 51, 0.08);
+        margin-top: 6px;
+        width: 100%;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .brand img {
+        height: 40px;
+        max-width: 140px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        max-width: 320px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Gold Coast Business Coaching">
+        <img src="https://ik.imagekit.io/q0gorn2pwv/logo.png" alt="Gold Coast Business Coaching logo" loading="lazy">
+      </a>
+      <div class="nav-right">
+        <nav class="menu" aria-label="Main navigation">
+          <a class="menu-link" href="index.html#top">Home</a>
+          <a class="menu-link" href="index.html#about">About</a>
+          <a class="menu-link" href="ebook.html">Free Ebook</a>
+          <div class="dropdown">
+            <button class="menu-link dropdown-toggle" type="button" aria-haspopup="true">Programs</button>
+            <div class="dropdown-menu" role="menu">
+              <a href="path-to-profit.html" role="menuitem">Path to Profit Workshop</a>
+              <a href="path-to-projectc-2.html" role="menuitem">Path to Projectc 2</a>
+              <a href="profit-accelerator.html" role="menuitem">12 Week Profit Accelerator</a>
+              <a href="inner-circle.html" role="menuitem">Inner Circle Mastermind</a>
+              <a href="one-to-one.html" role="menuitem">1-2-1 Strategy & Coaching</a>
+            </div>
+          </div>
+          <a class="menu-link" href="contact.html">Contact Us</a>
+        </nav>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="contact.html">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Free eBook</span>
+          <h1>Essential reading for EVERY Small Business Owner... Yours FREE!</h1>
+          <p class="lead">Grow profit, build a happier team, and reclaim your time. Tracey’s best-selling “101 Tips for Small Business Owners” is yours to download today.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download">Get your FREE eBook</a>
+            <a class="btn" style="border:1px solid rgba(12,27,51,0.1)" href="#tips">See what’s inside</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="panel">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/ebook-5hkBKkjV.jpeg?updatedAt=1764686434634" alt="101 Tips for Small Business Owners eBook cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why this book matters</h2>
+        <p class="section-lead">After 20 years coaching owners, Tracey wrote this best seller to help you take control of profit, team, and time.</p>
+        <div class="content-grid">
+          <div class="content-card">
+            <div class="card-icon" aria-hidden="true">📊</div>
+            <h3>Profit clarity</h3>
+            <p>Understand your numbers, uncover profit drivers, and make decisions with confidence.</p>
+          </div>
+          <div class="content-card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3>Team & time</h3>
+            <p>Build a reliable team, streamline your week, and regain time for life and growth.</p>
+          </div>
+          <div class="content-card">
+            <div class="card-icon" aria-hidden="true">⚡</div>
+            <h3>Fast to use</h3>
+            <p>Read a tip a day or a few at a time—each takes 5–10 minutes and stands alone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="container">
+        <div class="form-wrap">
+          <h3>Grab your FREE eBook "101 Tips for Small Business Owners"</h3>
+          <p class="section-lead" style="margin-bottom:10px;">This best seller retails for $19.95. Download your copy FREE today.</p>
+          <form>
+            <div class="form-row">
+              <div>
+                <label for="name">Name *</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Download Now</button>
+              <small style="color: var(--text-muted);">We won't send spam. Unsubscribe at any time.</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tips-section" id="tips">
+      <div class="container">
+        <h2>Even if you don't like to read, this is the book for you...</h2>
+        <p class="section-lead">Pick it up for 5–10 minutes, grab a tip, and put it down without losing your place.</p>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <span class="tip-number">#1</span>
+            <h3>Know your numbers (even if you hated maths) to grow profits.</h3>
+            <p>Get confident with the metrics that move the needle and spot profit wins fast.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-number">#13</span>
+            <h3>Become a marketing genius without a degree—bring in more ideal customers.</h3>
+            <p>Simple, repeatable tactics to attract and convert the right people to your business.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-number">#56</span>
+            <h3>Increase conversion rates fast—no extra spend, less fear of selling.</h3>
+            <p>Practical phrasing and follow-up steps that turn warm leads into paying clients.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-number">#83</span>
+            <h3>Time-poor? Get control of your week with a simple habit under 1% of your time.</h3>
+            <p>Lock in a weekly rhythm that keeps you focused, calm, and on track.</p>
+          </div>
+          <div class="tip-card">
+            <span class="tip-number">#97</span>
+            <h3>A small detail that’s actually huge for business—dial it in for big impact.</h3>
+            <p>Fine-tune the overlooked touchpoints that shape trust, loyalty, and referrals.</p>
+          </div>
+        </div>
+        <p class="section-lead" style="margin-top:18px;">There are 101 gems inside to help you build a more profitable business. Don't miss your free copy.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-brand">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/logo.png" alt="Gold Coast Business Coaching logo">
+          <p class="footer-text">Helping Gold Coast business owners grow profitability with practical, actionable coaching.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="ebook.html">Free Ebook</a></li>
+            <li><a href="path-to-profit.html">Path to Profits Workshop</a></li>
+            <li><a href="profit-accelerator.html">12 Week Profit Accelerator</a></li>
+            <li><a href="inner-circle.html">Inner Circle Mastermind</a></li>
+            <li><a href="one-to-one.html">1-to-1 Coaching</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list-footer">
+            <li class="contact-item-footer"><span class="contact-icon">✉️</span><span>tracey@traceyleak.com</span></li>
+            <li class="contact-item-footer"><span class="contact-icon">☎️</span><span>0407 564 119</span></li>
+            <li class="contact-item-footer"><span class="contact-icon">📍</span><span>Suite 31011 (Level 10), 9 Lawson St, Southport Qld 4215</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <div class="footer-social">
+            <a class="social-btn" aria-label="LinkedIn" href="#"><span>in</span></a>
+            <a class="social-btn" aria-label="Facebook" href="#"><span>f</span></a>
+            <a class="social-btn" aria-label="Instagram" href="#"><span>ig</span></a>
+          </div>
+          <a class="footer-cta" href="contact.html">Get started today</a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <span>© 2025 Gold Coast Business Coaching. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

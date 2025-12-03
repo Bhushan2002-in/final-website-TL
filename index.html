@@ -154,16 +154,27 @@
       position: relative;
     }
 
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      padding-left: 18px;
+    }
+
     .dropdown-toggle::after {
       content: "";
-      width: 8px;
-      height: 8px;
-      border-left: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      transform: rotate(-45deg);
-      margin-left: 2px;
-      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      box-shadow: 0 6px 12px rgba(12, 27, 51, 0.12);
     }
+
 
     .dropdown-menu {
       position: absolute;
@@ -440,8 +451,8 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 32px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
       align-items: center;
     }
 
@@ -475,9 +486,9 @@
       border-radius: 20px;
       background: var(--white);
       box-shadow: var(--shadow);
-      padding: 12px;
+      padding: 5px;
       border: 1px solid rgba(12, 27, 51, 0.06);
-      max-width: 460px;
+      max-width: 450px;
       width: 100%;
     }
 
@@ -905,6 +916,7 @@
       letter-spacing: -0.5px;
     }
 
+
     .hero p {
       margin: 0;
       font-size: 1.05rem;
@@ -1022,15 +1034,22 @@
     }
 
     @media (max-width: 900px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
       .nav-inner {
         flex-wrap: wrap;
-        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
       }
 
       .menu {
         width: 100%;
-        justify-content: center;
-        gap: 18px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .dropdown-menu {
@@ -1038,10 +1057,23 @@
         opacity: 1;
         transform: none;
         pointer-events: auto;
-        box-shadow: none;
-        background: var(--yellow-100);
-        border: 1px solid rgba(12, 27, 51, 0.06);
+        box-shadow: 0 8px 18px rgba(12, 27, 51, 0.12);
+        background: #fff;
+        border: 1px solid rgba(12, 27, 51, 0.08);
         margin-top: 6px;
+        width: 100%;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .brand img {
+        height: 40px;
+        max-width: 140px;
       }
 
       .hero-grid {
@@ -1074,9 +1106,12 @@
         height: 440px;
       }
 
-      .nav-right {
-        width: 100%;
-        justify-content: center;
+      .about-grid {
+        gap: 16px;
+      }
+
+      .about-visual .panel {
+        max-width: 340px;
       }
     }
   </style>
@@ -1092,11 +1127,12 @@
         <nav class="menu" aria-label="Main navigation">
           <a class="menu-link fade-up" style="--delay: 60ms;" href="#top">Home</a>
           <a class="menu-link fade-up" style="--delay: 120ms;" href="#about">About</a>
-          <a class="menu-link fade-up" style="--delay: 150ms;" href="#ebook">Free Ebook</a>
+          <a class="menu-link fade-up" style="--delay: 150ms;" href="ebook.html">Free Ebook</a>
           <div class="dropdown">
             <button class="menu-link dropdown-toggle fade-up" style="--delay: 180ms;" type="button" aria-haspopup="true">Programs</button>
             <div class="dropdown-menu" role="menu">
               <a href="path-to-profit.html" role="menuitem">Path to Profit Workshop</a>
+              <a href="path-to-projectc-2.html" role="menuitem">Path to Projectc 2</a>
               <a href="profit-accelerator.html" role="menuitem">12 Week Profit Accelerator</a>
               <a href="inner-circle.html" role="menuitem">Inner Circle Mastermind</a>
               <a href="one-to-one.html" role="menuitem">1-2-1 Strategy & Coaching</a>
@@ -1115,15 +1151,15 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <span class="eyebrow fade-up" style="--delay: 120ms;">Gold Coast Business Coaching</span>
-        <h1 class="fade-up" style="--delay: 200ms;">I Help Business Owners Grow Their Profitability with Confidence</h1>
+          <h1 class="fade-up" style="--delay: 200ms;">I Help Business Owners Grow Their Profitability with Confidence</h1>
         <p class="fade-up" style="--delay: 280ms;">Shape a business you love with tailored coaching, practical strategy, and the accountability to make it happen. Fresh, modern, and grounded in the Gold Coast community.</p>
         <div class="hero-actions fade-up" style="--delay: 360ms;">
-          <a class="btn btn-primary" href="#ebook">Download Your Free EBook</a>
+          <a class="btn btn-primary" href="ebook.html">Download Your Free EBook</a>
         </div>
       </div>
       <div class="hero-visual fade-up" style="--delay: 320ms;">
         <div class="panel">
-          <img src="https://ik.imagekit.io/q0gorn2pwv/tracey_leak_008.png" alt="Tracey Leek Business Coaching">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/tracey_leak_005.png" alt="Tracey Leek Business Coaching">
         </div>
         <div class="orb" aria-hidden="true"></div>
       </div>
@@ -1158,7 +1194,7 @@
           </div>
         </div>
         <div class="hero-actions" id="ebook-download">
-          <a class="btn btn-primary" href="#ebook-download">Download Your Free Ebook</a>
+          <a class="btn btn-primary" href="ebook.html">Download Your Free Ebook</a>
           <a class="btn btn-ghost" href="#newsletter">Subscribe to Newsletter</a>
         </div>
       </div>
@@ -1243,7 +1279,7 @@
       <div class="services-header fade-up" style="--delay: 120ms;">
         <span class="section-label">Testimonials</span>
         <div class="section-underline" aria-hidden="true"></div>
-        <h2>What clients say</h2>
+        <h2>What Clients Say</h2>
         <p>Real results from Gold Coast business owners who’ve grown profits, clarity, and confidence with Tracey’s guidance.</p>
       </div>
       <div class="testimonials-grid">
@@ -1472,7 +1508,7 @@
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="#ebook">Free Ebook</a></li>
+            <li><a href="ebook.html">Free Ebook</a></li>
             <li><a href="#path-to-profit">Path to Profits Workshop</a></li>
             <li><a href="#profit-accelerator">12 Week Profit Accelerator</a></li>
             <li><a href="#inner-circle">Inner Circle Mastermind</a></li>
