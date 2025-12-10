@@ -214,9 +214,13 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 18px;
       align-items: center;
+      justify-items: center;
+      text-align: center;
+      max-width: 1080px;
+      margin: 0 auto;
     }
 
     .eyebrow {
@@ -287,10 +291,15 @@
       padding: 16px;
       border: 1px solid rgba(12, 27, 51, 0.06);
       box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 1080px;
     }
 
     .hero-visual {
       position: relative;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
     }
 
     .hero-visual img {
@@ -298,6 +307,29 @@
       border-radius: 14px;
       object-fit: cover;
       box-shadow: var(--shadow);
+    }
+
+    .hero-visual video {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      aspect-ratio: 16 / 9;
+      min-height: clamp(340px, 55vw, 640px);
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 780px;
+    }
+
+    .hero-subheading {
+      margin: 10px 0 0;
+      font-size: 1.08rem;
+      color: var(--text-main);
+      font-weight: 700;
     }
 
     .btn {
@@ -407,6 +439,7 @@
       line-height: 1.65;
     }
 
+
     .details {
       padding: 28px 0;
     }
@@ -472,10 +505,10 @@
     }
 
     .spec-card {
-      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      background: #fff;
       border-radius: 16px;
       padding: 18px;
-      border: 1px solid rgba(12, 27, 51, 0.08);
+      border: 1px solid #dfe7f3;
       box-shadow: 0 12px 28px rgba(12, 27, 51, 0.08);
       display: grid;
       gap: 10px;
@@ -487,7 +520,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(15, 95, 199, 0.06), rgba(247, 201, 72, 0.08));
+      background: linear-gradient(135deg, rgba(12, 27, 51, 0.04), rgba(247, 201, 72, 0.05));
       opacity: 0;
       transition: opacity 160ms ease;
       z-index: 0;
@@ -503,16 +536,17 @@
     }
 
     .spec-icon {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      background: #eef2f8;
       display: grid;
       place-items: center;
-      color: #fff;
-      font-size: 1.2rem;
+      color: var(--blue-900);
+      font-size: 1.15rem;
       font-weight: 800;
-      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.12);
+      border: 1px solid #d6e0f0;
+      box-shadow: 0 8px 18px rgba(12, 27, 51, 0.12);
     }
 
     .spec-card h3 {
@@ -530,10 +564,11 @@
 
     .cta-strip {
       margin: 28px 0;
-      background: linear-gradient(90deg, rgba(15, 95, 199, 0.14), rgba(247, 201, 72, 0.24), rgba(15, 95, 199, 0.14));
+      background: linear-gradient(90deg, #0f5fc7 0%, #14b8a6 50%, #0f5fc7 100%);
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid rgba(12, 27, 51, 0.06);
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      box-shadow: 0 14px 30px rgba(12, 27, 51, 0.14);
     }
 
     .cta-track {
@@ -545,7 +580,7 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--blue-900);
+      color: #ffffff;
       white-space: nowrap;
       min-width: 0;
     }
@@ -639,8 +674,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--yellow-400);
-      box-shadow: 0 0 0 4px rgba(247, 201, 72, 0.28);
+      background: #fdecb5;
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
       flex-shrink: 0;
     }
 
@@ -893,18 +928,19 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Path to Profit Workshop</span>
-          <h1>Ready to run your business with clarity and <span class="highlight-underline">grow your profits?</span></h1>
-          <p class="lead">Join Tracey for a hands-on workshop that diagnoses your profit drivers, sharpens your offers, and leaves you with a 90-day plan you can act on immediately.</p>
+          <span class="eyebrow">Free 3-Hours Workshop</span>
+          <h1>Do you want to feel like you know what you’re doing in business AND increase your profits at the same time?</h1>
+          <p class="hero-subheading">Come learn the 5 key drivers that increase your PROFITS and which are the ones YOU need to be working on!</p>
         </div>
         <div class="hero-visual panel">
-          <video src="https://ik.imagekit.io/q0gorn2pwv/file-uploads_sites_71423_video_feeba6d-472-d6c0-474f-b4d23035e73b_V2_P2P_Intro.MOV.mp4" autoplay muted playsinline controls style="width:100%; border-radius:12px; display:block;"></video>
+          <video src="https://ik.imagekit.io/q0gorn2pwv/file-uploads_sites_71423_video_feeba6d-472-d6c0-474f-b4d23035e73b_V2_P2P_Intro.MOV.mp4" autoplay muted playsinline controls></video>
         </div>
+        <p class="lead hero-sub">Join Tracey for a hands-on workshop that diagnoses your profit drivers, sharpens your offers, and leaves you with a 90-day plan you can act on immediately.</p>
       </div>
     </section>
 
     <section class="cta-banner">
-      <h2>Come to the <span style="color:#14b8a6;">FREE</span> Path to Profits Workshop to learn how to grow the profits of your business.</h2>
+      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to Learn how to grow the profits of your business. (Valued at $297)</h2>
       <p>(Next Date... Thursday 22nd January, 2026 - 9am to 12noon)</p>
       <a class="cta-button" style="background: var(--blue-700);" href="contact.html">Register Now</a>
       <div class="cta-note">Seats are limited. Workshop is free (valued at $297).</div>
@@ -935,61 +971,39 @@
 
     <section class="section" id="specs">
       <h2>Here’s What We’ll Cover</h2>
-      <p class="section-lead">The essentials you need to boost profit, attract better customers, and lead with confidence.</p>
       <div class="specs-grid">
         <div class="spec-card">
-          <div class="spec-icon">#</div>
-          <h3>Understanding Your Numbers</h3>
-          <p>Know exactly what numbers you need to know in your business and how to use them so you can see your profits grow.</p>
+          <div class="spec-icon">📊</div>
+          <h3>Understand your numbers</h3>
+          <p>Know exactly what numbers you need to know in your business and how to use them to see your profits grow.</p>
         </div>
         <div class="spec-card">
-          <div class="spec-icon">↑</div>
-          <h3>Identify Your Key Business Drivers</h3>
-          <p>Pinpoint the areas that, when improved, make the biggest difference to your bottom line.</p>
+          <div class="spec-icon">🎯</div>
+          <h3>Identify your Key Drivers</h3>
+          <p>Pinpoint the area that, when improved, make the biggest difference to your bottom line profit.</p>
         </div>
         <div class="spec-card">
-          <div class="spec-icon">★</div>
-          <h3>Marketing That Works!</h3>
-          <p>Discover the best strategies to bring in more of your ideal customers — cost effectively.</p>
+          <div class="spec-icon">📣</div>
+          <h3>Marketing that Works</h3>
+          <p>Discover Tracey’s favourite low-cost marketing strategies to attract more customers.</p>
         </div>
         <div class="spec-card">
-          <div class="spec-icon">✔</div>
+          <div class="spec-icon">🛠</div>
           <h3>Practical Business Strategies</h3>
-          <p>Tips to help you work smarter, manage your time better, and lead your business with confidence.</p>
+          <p>Tips to help you simplify and grow your business with confidence.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 10px;">
-      <div style="background: linear-gradient(135deg, #dfeafe 0%, #fdecb5 100%); border-radius: 18px; padding: 22px; color: var(--text-main); box-shadow: 0 16px 36px rgba(12, 27, 51, 0.18);">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; align-items: center;">
-          <div style="display:grid; gap:10px;">
-            <h2 style="margin:0; color:var(--blue-900); font-size:1.7rem; letter-spacing:-0.3px;">Why This Workshop Works…</h2>
-            <p style="margin:0; color: var(--text-main); font-size:1.02rem;">With over 20 years coaching small business owners, I know the challenges you face – and how to turn them into opportunities. Small group (12 max) so you get answers, tailored advice, and learn from others in the room.</p>
-          </div>
-          <div style="background: rgba(255,255,255,0.92); border-radius: 14px; padding: 14px; display: grid; gap: 10px; border:1px solid rgba(12,27,51,0.08); box-shadow: 0 10px 22px rgba(12,27,51,0.12);">
-            <div style="display:grid; grid-template-columns: 26px 1fr; gap:10px; align-items:flex-start;">
-              <span style="width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg, var(--blue-700), var(--yellow-400)); color:#fff; display:grid; place-items:center; font-weight:800;">→</span>
-              <div>
-                <strong style="color:var(--blue-900);">A clear Roadmap</strong>
-                <p style="margin:4px 0 0; color: var(--text-muted);">Action steps to improve profit as soon as you leave.</p>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns: 26px 1fr; gap:10px; align-items:flex-start;">
-              <span style="width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg, var(--blue-700), var(--yellow-400)); color:#fff; display:grid; place-items:center; font-weight:800;">⚡</span>
-              <div>
-                <strong style="color:var(--blue-900);">Confidence to Act</strong>
-                <p style="margin:4px 0 0; color: var(--text-muted);">Clarity and support to move quickly on your next steps.</p>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns: 26px 1fr; gap:10px; align-items:flex-start;">
-              <span style="width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg, var(--blue-700), var(--yellow-400)); color:#fff; display:grid; place-items:center; font-weight:800;">🔎</span>
-              <div>
-                <strong style="color:var(--blue-900);">Fresh Perspective</strong>
-                <p style="margin:4px 0 0; color: var(--text-muted);">New insights from Tracey and fellow owners in the room.</p>
-              </div>
-            </div>
-          </div>
+    <section class="about-workshop">
+      <div class="about-grid">
+        <div class="about-copy">
+          <h2>Why This Workshop Works…</h2>
+          <p>With over 20 years coaching small business owners, I know the challenges you face – and how to turn them into opportunities. Small group (12 max) so you get answers, tailored advice, and learn from others in the room.</p>
+          <p>By the end of our 3 hours together you will walk away with strategies and ideas PLUS the confidence to implement them into your business to grow your profits.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/8e1c3c8-3062-b120-a5ed-ecd36643f057_d0c2cc0a-332d-4002-af33-02b0dd848151.png" alt="Participants in the Path to Profits workshop">
         </div>
       </div>
     </section>
@@ -999,18 +1013,18 @@
       <div class="details-card">
         <div class="details-grid">
           <div class="detail-block">
-            <h4>Upcoming Dates to Choose From</h4>
+            <h4>Upcoming Workshop Dates</h4>
             <div class="date-chip">Saturday 15th November, 2025</div>
             <div class="date-chip">Thursday 4th December, 2025</div>
-            <div class="date-chip">Time: 9am to 12noon</div>
           </div>
           <div class="detail-block">
             <h4>Where</h4>
-            <p>Gold Coast Business Coaching<br>Suite 31011 (Level 10), 9 Lawson St, Southport</p>
+            <p>Gold Coast Business Coaching<br>Suite 31011 (Level 10)<br>Tower 3 (Red)<br>9 Lawson St<br>Southport</p>
           </div>
           <div class="detail-block">
-            <h4>Investment</h4>
-            <p><strong style="color:var(--blue-900);">FREE</strong> (Valued at $297 pp)</p>
+            <h4>Time & Investment</h4>
+            <p><strong style="color:var(--blue-900);">Time:</strong> 9am to 12noon</p>
+            <p><strong style="color:var(--blue-900);">Investment:</strong> Free (Valued at $297)</p>
             <a class="btn btn-primary" style="margin-top:10px; display:inline-flex; justify-content:center; width:100%;" href="contact.html">Register Now</a>
           </div>
         </div>
@@ -1018,7 +1032,7 @@
     </section>
 
     <section class="cta-banner">
-      <h2>Come to the <span style="color:#14b8a6;">FREE</span> Path to Profits Workshop to learn how to grow the profits of your business.</h2>
+      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to Learn how to grow the profits of your business. (Valued at $297)</h2>
       <p>(Next Date... Thursday 22nd January, 2026 - 9am to 12noon)</p>
       <a class="cta-button" style="background: var(--blue-700);" href="contact.html">Register Now</a>
       <div class="cta-note">Seats are limited. Workshop is free (valued at $297).</div>
@@ -1063,14 +1077,14 @@
 
     <div class="cta-strip" aria-hidden="true">
       <div class="cta-track">
-        <span class="cta-dot"></span> Book now — secure your spot
-        <span class="cta-dot"></span> Your 90-day profit plan awaits
-        <span class="cta-dot"></span> Book now — secure your spot
-        <span class="cta-dot"></span> Your 90-day profit plan awaits
-        <span class="cta-dot"></span> Book now — secure your spot
-        <span class="cta-dot"></span> Your 90-day profit plan awaits
-        <span class="cta-dot"></span> Book now — secure your spot
-        <span class="cta-dot"></span> Your 90-day profit plan awaits
+        <span class="cta-dot"></span> Book Now – Seats Are Limited
+        <span class="cta-dot"></span> Discover your Path to Profits
+        <span class="cta-dot"></span> Book Now – Seats Are Limited
+        <span class="cta-dot"></span> Discover your Path to Profits
+        <span class="cta-dot"></span> Book Now – Seats Are Limited
+        <span class="cta-dot"></span> Discover your Path to Profits
+        <span class="cta-dot"></span> Book Now – Seats Are Limited
+        <span class="cta-dot"></span> Discover your Path to Profits
       </div>
     </div>
 
@@ -1080,10 +1094,10 @@
           <h2>Meet Your Workshop Facilitator...</h2>
           <p>Tracey has been coaching, training and speaking to small business owners for the last 20 years! She is a best selling author and has spoken on business stages all around Australia and overseas, but lives right here on the Gold Coast.</p>
           <p>Tracey is known for her practical, down to earth style and for her ability to keep things simple to help business owners maximise their profits.</p>
-          <p>Come learn with Tracey in the Path to Profits workshop for this special FREE offer.</p>
+          <p>Come learn with Tracey in the FREE 3-hour Path to Profits workshop.</p>
         </div>
         <div class="about-image">
-          <img src="https://ik.imagekit.io/q0gorn2pwv/tracey_leak_001%20(1).png?updatedAt=1764690022156" alt="Tracey Leak workshop facilitator">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/tracey_leak_005.png?updatedAt=1764711287081" alt="Tracey Leak workshop facilitator">
         </div>
       </div>
     </section>
@@ -1098,7 +1112,16 @@
         </details>
         <details>
           <summary>Times, dates and location for the workshop?</summary>
-          <p>All Path to Profits workshops are held at my offices at: Gold Coast Business Coaching, Suite 31011, Level 10, 9 Lawson St, Southport. Workshop is 8.45am for a 9am start and we finish at 12noon. Upcoming date: Thursday 22nd January, 2026.</p>
+          <p>All Path to Profits workshops are held at my offices at:<br>
+          Gold Coast Business Coaching<br>
+          Suite 31011 (Level 10)<br>
+          Tower 3 (Red)<br>
+          9 Lawson St<br>
+          Southport</p>
+          <p>Workshop is 8.45am for a 9am start. We finish at 12 noon.</p>
+          <p>Upcoming dates:<br>
+          Thursday 22nd January, 2026<br>
+          Friday 13th February, 2026</p>
         </details>
         <details>
           <summary>What do I need to do/bring/wear for the event?</summary>
@@ -1132,7 +1155,7 @@
     </section>
 
     <section class="cta-banner" style="padding-bottom: 64px;">
-      <h2>Come to the <span style="color:#14b8a6;">FREE</span> Path to Profits Workshop to learn how to grow the profits of your business.</h2>
+      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to Learn how to grow the profits of your business. (Valued at $297)</h2>
       <p>(Next Date... Thursday 22nd January, 2026 - 9am to 12noon)</p>
       <a class="cta-button" style="background: var(--blue-700);" href="contact.html">Register Now</a>
       <div class="cta-note">Seats are limited. Workshop is free (valued at $297).</div>

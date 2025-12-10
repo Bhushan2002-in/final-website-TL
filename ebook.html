@@ -27,7 +27,7 @@
     body {
       margin: 0;
       font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(120% 120% at 100% 0%, rgba(15, 95, 199, 0.06), transparent 55%), #f8fbff;
+      background: #f8fbff;
       color: var(--text-main);
       line-height: 1.6;
     }
@@ -197,13 +197,38 @@
 
     /* Hero */
     .hero {
-      padding: 56px 0 36px;
+      position: relative;
+      padding: 82px 0 76px;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #0b2f4f url("https://ik.imagekit.io/q0gorn2pwv/AwneXeoLR5S40dpkgz0V_101_tips_SBO_Hero.png") center/cover no-repeat;
+      filter: blur(2px);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, rgba(9, 37, 68, 0.6) 0%, rgba(9, 37, 68, 0.35) 50%, rgba(9, 37, 68, 0.65) 100%);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
+      gap: 26px;
       align-items: center;
       justify-items: start;
     }
@@ -224,8 +249,8 @@
 
     h1 {
       margin: 12px 0 10px;
-      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
-      color: var(--blue-900);
+      font-size: clamp(2.4rem, 3vw + 1rem, 3.3rem);
+      color: #fff;
       letter-spacing: -0.6px;
       line-height: 1.2;
     }
@@ -233,40 +258,250 @@
     .lead {
       margin: 0 0 14px;
       font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 680px;
+    }
+
+    .hero-card {
+      background: #fefefe;
+      color: var(--text-main);
+      border-radius: 12px;
+      padding: 22px;
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      box-shadow: 0 18px 36px rgba(12, 27, 51, 0.18);
+      max-width: 420px;
+      width: 100%;
+      justify-self: end;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 6px;
+      color: #0c2f52;
+      font-size: 1.35rem;
+      letter-spacing: -0.2px;
+      line-height: 1.35;
+    }
+
+    .hero-card p {
+      margin: 0 0 12px;
       color: var(--text-muted);
-      max-width: 640px;
+      font-size: 1rem;
     }
 
-    .hero-actions {
-      display: flex;
-      align-items: center;
+    .hero-form {
+      display: grid;
       gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
     }
 
-    .panel {
+    .hero-form input {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #dfe5f2;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text-main);
+      background: #fff;
+    }
+
+    .hero-form input:focus {
+      outline: none;
+      border-color: rgba(15, 95, 199, 0.5);
+      box-shadow: 0 0 0 3px rgba(15, 95, 199, 0.15);
+    }
+
+    .hero-card .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .form-note {
+      display: block;
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-size: 0.93rem;
+    }
+
+    /* Tips + CTA sections */
+    .tips-section {
+      background: linear-gradient(180deg, #f7faff 0%, #f1f5fb 100%);
+      padding: 48px 0 56px;
+    }
+
+    .tips-flex {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.05fr) minmax(300px, 0.95fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .tip-text-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: grid;
+      gap: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 1.04rem;
+      max-width: 760px;
+    }
+
+    .tip-text-list strong {
+      color: #0f5fc7;
+      font-weight: 800;
+      margin-right: 6px;
+      white-space: nowrap;
+    }
+
+    .tips-image-card {
       background: #fff;
       border-radius: 18px;
-      padding: 12px;
-      border: 1px solid rgba(12, 27, 51, 0.06);
-      box-shadow: var(--shadow);
-      max-width: 360px;
+      padding: 18px;
+      box-shadow: 0 18px 36px rgba(12, 27, 51, 0.12);
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      display: grid;
+      place-items: center;
+    }
+
+    .tips-cover {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 14px;
+      box-shadow: 0 16px 34px rgba(12, 27, 51, 0.18);
+      border: 1px solid rgba(12, 27, 51, 0.1);
+      display: block;
+    }
+
+    .bottom-cta {
+      background: #eef4ff;
+      padding: 36px 0;
+    }
+
+    .bottom-cta .cta-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      box-shadow: 0 14px 28px rgba(12, 27, 51, 0.12);
+      text-align: center;
+      display: grid;
+      gap: 10px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .bottom-cta h3 {
+      margin: 0;
+      color: var(--blue-900);
+      font-size: 1.6rem;
     }
 
-    .hero-visual img {
+    .bottom-cta p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .cta-after-tips {
+      background: #f6f9ff;
+      padding: 46px 0;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .cta-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(12, 27, 51, 0.08);
+      box-shadow: 0 16px 30px rgba(12, 27, 51, 0.1);
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-card h3 {
+      margin: 0;
+      color: var(--blue-900);
+      letter-spacing: -0.2px;
+    }
+
+    .cta-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .inline-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .inline-form input {
       width: 100%;
-      max-width: 320px;
-      border-radius: 14px;
-      object-fit: cover;
-      box-shadow: var(--shadow);
+      border-radius: 10px;
+      border: 1px solid #dfe5f2;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text-main);
+      background: #fff;
+    }
+
+    .inline-form input:focus {
+      outline: none;
+      border-color: rgba(15, 95, 199, 0.5);
+      box-shadow: 0 0 0 3px rgba(15, 95, 199, 0.15);
+    }
+
+    .inline-form .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .mini-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-bullets li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      align-items: start;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .mini-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #14b8a6;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .mini-cover {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 12px 26px rgba(12, 27, 51, 0.12);
+      border: 1px solid rgba(12, 27, 51, 0.06);
+      margin-top: 4px;
     }
 
     .section {
@@ -334,15 +569,17 @@
     }
 
     .card-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e7eef9;
+      border: 2px solid #c9d7f0;
       display: grid;
       place-items: center;
-      color: #fff;
-      font-size: 1.25rem;
-      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.16);
+      color: var(--blue-900);
+      font-size: 1rem;
+      box-shadow: none;
+      font-weight: 800;
     }
 
     .tip-card {
@@ -637,11 +874,20 @@
         grid-template-columns: 1fr;
       }
 
-      .panel {
-        max-width: 320px;
+      .hero-card {
+        max-width: 420px;
+        justify-self: center;
+      }
+
+      .tips-flex {
+        grid-template-columns: 1fr;
       }
 
       .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-grid {
         grid-template-columns: 1fr;
       }
 
@@ -672,7 +918,6 @@
             <button class="menu-link dropdown-toggle" type="button" aria-haspopup="true">Coaching Programs</button>
             <div class="dropdown-menu" role="menu">
               <a href="path-to-profit.html" role="menuitem">Path to Profit Workshop</a>
-              <a href="path-to-projectc-2.html" role="menuitem">Path to Projectc 2</a>
               <a href="profit-accelerator.html" role="menuitem">12 Week Profit Accelerator</a>
               <a href="inner-circle.html" role="menuitem">Inner Circle Mastermind</a>
               <a href="one-to-one.html" role="menuitem">1-2-1 Strategy & Coaching</a>
@@ -691,18 +936,19 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Free eBook</span>
           <h1>Essential reading for EVERY Small Business Owner... Yours FREE!</h1>
-          <p class="lead">Grow profit, build a happier team, and reclaim your time. Tracey’s best-selling “101 Tips for Small Business Owners” is yours to download today.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#download">Get your FREE eBook</a>
-            <a class="btn" style="border:1px solid rgba(12,27,51,0.1)" href="#tips">See what’s inside</a>
-          </div>
+          <p class="lead">Every Small Business Owner wants to grow their business... make more profit, have a happier (and reliable) team plus gain the control and freedom to have more time in their week to live their life!</p>
+          <p class="lead">After 20 years of coaching business owners, Tracey wrote this book to help MORE small business owners gain control on their time, create a more productive team and of course... make more profit!</p>
         </div>
-        <div class="hero-visual">
-          <div class="panel">
-            <img src="https://ik.imagekit.io/q0gorn2pwv/ebook-5hkBKkjV.jpeg?updatedAt=1764686434634" alt="101 Tips for Small Business Owners eBook cover">
-          </div>
+        <div class="hero-card">
+          <h3>Grab your FREE eBook "101 Tips for Small Business Owners"</h3>
+          <p>This best seller retails for $19.95. Download your copy FREE today.</p>
+          <form class="hero-form">
+            <input type="text" name="hero-name" placeholder="Name" required>
+            <input type="email" name="hero-email" placeholder="Email" required>
+            <button type="submit" class="btn btn-primary">Download yours FREE today!</button>
+          </form>
+          <small class="form-note">We won't send spam. Unsubscribe at any time.</small>
         </div>
       </div>
     </section>
@@ -731,65 +977,35 @@
       </div>
     </section>
 
-    <section class="section" id="download">
+    <section class="tips-section" id="tips">
       <div class="container">
-        <div class="form-wrap">
-          <h3>Grab your FREE eBook "101 Tips for Small Business Owners"</h3>
-          <p class="section-lead" style="margin-bottom:10px;">This best seller retails for $19.95. Download your copy FREE today.</p>
-          <form>
-            <div class="form-row">
-              <div>
-                <label for="name">Name *</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required>
-              </div>
-              <div>
-                <label for="email">Email *</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" required>
-              </div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Download Now</button>
-              <small style="color: var(--text-muted);">We won't send spam. Unsubscribe at any time.</small>
-            </div>
-          </form>
+        <h2>You don't want to miss...</h2>
+        <div class="tips-flex">
+          <div>
+            <ul class="tip-text-list">
+              <li><strong>Tip # 1 -</strong>We start off with a bang and talk about knowing your numbers (even if you hated maths at school) to grow your profits!</li>
+              <li><strong>Tip # 13 -</strong>Want more customers for your business? Want to become a marketing genius without having to do a 4 year degree? Then you will want to read this tip.</li>
+              <li><strong>Tip # 56 -</strong>Increasing your conversion rate is the fastest way to increase profits ... and it won't cost you a cent. This tip will take away the fear of selling and make your conversion rate go rocketing up!</li>
+              <li><strong>Tip # 83 -</strong>Time poor? Learn my number 1 tip on how to get control on your time and it is easier than you think and simple to implement... all in less than 1% of all the time available to you in a week.</li>
+              <li><strong>Tip # 97 -</strong>A little thing that is actually a HUGE thing in business to get right. Want to know what it is?</li>
+            </ul>
+          </div>
+          <div class="tips-image-card">
+            <img class="tips-cover" src="https://ik.imagekit.io/q0gorn2pwv/ebook-5hkBKkjV.jpeg?updatedAt=1764686434634" alt="101 Tips for Small Business Owners eBook cover">
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section tips-section" id="tips">
+    <section class="bottom-cta">
       <div class="container">
-        <h2>Even if you don't like to read, this is the book for you...</h2>
-        <p class="section-lead">Pick it up for 5–10 minutes, grab a tip, and put it down without losing your place.</p>
-        <div class="tips-grid">
-          <div class="tip-card">
-            <span class="tip-number">#1</span>
-            <h3>Know your numbers (even if you hated maths) to grow profits.</h3>
-            <p>Get confident with the metrics that move the needle and spot profit wins fast.</p>
-          </div>
-          <div class="tip-card">
-            <span class="tip-number">#13</span>
-            <h3>Become a marketing genius without a degree—bring in more ideal customers.</h3>
-            <p>Simple, repeatable tactics to attract and convert the right people to your business.</p>
-          </div>
-          <div class="tip-card">
-            <span class="tip-number">#56</span>
-            <h3>Increase conversion rates fast—no extra spend, less fear of selling.</h3>
-            <p>Practical phrasing and follow-up steps that turn warm leads into paying clients.</p>
-          </div>
-          <div class="tip-card">
-            <span class="tip-number">#83</span>
-            <h3>Time-poor? Get control of your week with a simple habit under 1% of your time.</h3>
-            <p>Lock in a weekly rhythm that keeps you focused, calm, and on track.</p>
-          </div>
-          <div class="tip-card">
-            <span class="tip-number">#97</span>
-            <h3>A small detail that’s actually huge for business—dial it in for big impact.</h3>
-            <p>Fine-tune the overlooked touchpoints that shape trust, loyalty, and referrals.</p>
-          </div>
+        <div class="cta-box">
+          <h3>There are 101 gems of information to help you grow and build a more profitable business... all yours for FREE!</h3>
+          <p>Don't miss this chance to grab your copy for FREE. Essential reading for every Small Business Owner. Scroll up and enter your details to download your copy today for FREE.</p>
         </div>
-        <p class="section-lead" style="margin-top:18px;">There are 101 gems inside to help you build a more profitable business. Don't miss your free copy.</p>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
