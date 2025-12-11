@@ -209,7 +209,39 @@
     }
 
     .hero {
+      position: relative;
       padding: 56px 0 40px;
+      overflow: hidden;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(11, 63, 120, 0.75), rgba(11, 63, 120, 0.65)),
+        url("https://ik.imagekit.io/q0gorn2pwv/c4072f4-1ab0-b80-ef1d-a3753c066b7_f303215e-8177-429f-928d-511a9d4e2075.png?updatedAt=1764701943725");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(4px);
+      transform: scale(1.1);
+      z-index: 0;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero .hero-sub,
+    .hero .hero-subheading {
+      color: #fff;
     }
 
     .hero-grid {
@@ -688,6 +720,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+      padding: 0 16px;
     }
 
     .video-card {
@@ -928,7 +961,7 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Free 3-Hours Workshop</span>
+          <span class="eyebrow">Free 3-Hour Workshop</span>
           <h1>Do you want to feel like you know what you’re doing in business AND increase your profits at the same time?</h1>
           <p class="hero-subheading">Come learn the 5 key drivers that increase your PROFITS and which are the ones YOU need to be working on!</p>
         </div>
