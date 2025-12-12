@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Path to Profit Workshop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-xX2cZ5uQjWw7YsYkGMO3ySJQx51H32kOQw45x6w8uPITs8CaGpGXHBt1RduCMsZ/HXXIQK5vC41tnxIYkB+EUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/logo.png" type="image/png">
@@ -210,7 +211,7 @@
 
     .hero {
       position: relative;
-      padding: 56px 0 40px;
+      padding: 28px 0 24px;
       overflow: hidden;
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -319,9 +320,9 @@
 
     .panel {
       background: #fff;
-      border-radius: 18px;
-      padding: 16px;
-      border: 1px solid rgba(12, 27, 51, 0.06);
+      border-radius: 12px;
+      padding: 2px;
+      border: 4px solid rgba(12, 27, 51, 0.06);
       box-shadow: var(--shadow);
       width: 100%;
       max-width: 1080px;
@@ -520,20 +521,34 @@
       color: var(--text-muted);
     }
 
-    .date-chip {
-      display: inline-flex;
+    .date-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .date-item {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 14px;
-      background: #e1eafe;
-      color: var(--blue-900);
-      border-radius: 14px;
+      gap: 10px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
       font-weight: 800;
-      border: 1px solid rgba(12, 27, 51, 0.12);
-      margin: 8px 0;
-      width: 100%;
-      justify-content: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 10px 20px rgba(12, 27, 51, 0.08);
+      color: var(--blue-900);
+      box-shadow: none;
+    }
+
+    .date-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f7c948;
+      box-shadow: 0 0 0 4px rgba(247, 201, 72, 0.25);
+      flex-shrink: 0;
     }
 
     .spec-card {
@@ -568,17 +583,31 @@
     }
 
     .spec-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: #eef2f8;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f7faff 0%, #eef2ff 100%);
       display: grid;
       place-items: center;
       color: var(--blue-900);
-      font-size: 1.15rem;
-      font-weight: 800;
-      border: 1px solid #d6e0f0;
-      box-shadow: 0 8px 18px rgba(12, 27, 51, 0.12);
+      border: 1px solid #d8e3ff;
+      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.12);
+    }
+
+    .spec-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #0b3f78;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .spec-icon img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
     }
 
     .spec-card h3 {
@@ -872,7 +901,19 @@
     }
 
     .contact-icon {
-      color: var(--yellow-400);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--yellow-400);
+      stroke-width: 2;
+      fill: none;
     }
 
     .footer-social {
@@ -886,18 +927,28 @@
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      background: var(--yellow-400);
+      background: #f7c948;
       display: grid;
       place-items: center;
-      color: #0c3b67;
+      color: #0b3f78;
       font-weight: 800;
       text-decoration: none;
       transition: transform 150ms ease, box-shadow 150ms ease;
+      border: none;
     }
 
     .social-btn:hover {
       transform: translateY(-1px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+      background: #f7d35a;
+    }
+
+    .social-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: #0b3f78;
+      stroke-width: 2;
+      fill: none;
     }
 
     .footer-cta {
@@ -1006,22 +1057,30 @@
       <h2>Here’s What We’ll Cover</h2>
       <div class="specs-grid">
         <div class="spec-card">
-          <div class="spec-icon">📊</div>
+          <div class="spec-icon" aria-hidden="true">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/graph4.jpeg" alt="">
+          </div>
           <h3>Understand your numbers</h3>
           <p>Know exactly what numbers you need to know in your business and how to use them to see your profits grow.</p>
         </div>
         <div class="spec-card">
-          <div class="spec-icon">🎯</div>
+          <div class="spec-icon" aria-hidden="true">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/goal.png" alt="">
+          </div>
           <h3>Identify your Key Drivers</h3>
           <p>Pinpoint the area that, when improved, make the biggest difference to your bottom line profit.</p>
         </div>
         <div class="spec-card">
-          <div class="spec-icon">📣</div>
+          <div class="spec-icon" aria-hidden="true">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/marketing.png" alt="">
+          </div>
           <h3>Marketing that Works</h3>
           <p>Discover Tracey’s favourite low-cost marketing strategies to attract more customers.</p>
         </div>
         <div class="spec-card">
-          <div class="spec-icon">🛠</div>
+          <div class="spec-icon" aria-hidden="true">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/stra.png" alt="">
+          </div>
           <h3>Practical Business Strategies</h3>
           <p>Tips to help you simplify and grow your business with confidence.</p>
         </div>
@@ -1047,8 +1106,10 @@
         <div class="details-grid">
           <div class="detail-block">
             <h4>Upcoming Workshop Dates</h4>
-            <div class="date-chip">Saturday 15th November, 2025</div>
-            <div class="date-chip">Thursday 4th December, 2025</div>
+            <ul class="date-list">
+              <li class="date-item"><span class="date-dot"></span>November Saturday 15th, 2025</li>
+              <li class="date-item"><span class="date-dot"></span>December Thursday 15th, 2025</li>
+            </ul>
           </div>
           <div class="detail-block">
             <h4>Where</h4>
@@ -1215,17 +1276,17 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul class="contact-list">
-            <li class="contact-item"><span class="contact-icon">✉️</span><span>tracey@traceyleak.com</span></li>
-            <li class="contact-item"><span class="contact-icon">☎️</span><span>0407 564 119</span></li>
-            <li class="contact-item"><span class="contact-icon">📍</span><span>Suite 31011 (Level 10), 9 Lawson St, Southport Qld 4215</span></li>
+            <li class="contact-item"><span class="contact-icon"><svg viewBox="0 0 32 24"><rect x="3" y="4" width="26" height="16" rx="2" ry="2"></rect><path d="M3 6.5 16 14l13-7.5"></path></svg></span><span>tracey@traceyleak.com</span></li>
+            <li class="contact-item"><span class="contact-icon"><svg viewBox="0 0 32 32"><path d="M8.5 7h3l2 5-3 2a10 10 0 0 0 7.5 7.5l2-3 5 2v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 5.5 9a2 2 0 0 1 2-2Z"></path></svg></span><span>0407 564 119</span></li>
+            <li class="contact-item"><span class="contact-icon"><svg viewBox="0 0 32 32"><path d="M16 28s8-7 8-14a8 8 0 1 0-16 0c0 7 8 14 8 14Z"></path><circle cx="16" cy="14" r="3"></circle></svg></span><span>Suite 31011 (Level 10), 9 Lawson St, Southport Qld 4215</span></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Follow</h4>
           <div class="footer-social">
-            <a class="social-btn" aria-label="LinkedIn" href="#"><span>in</span></a>
-            <a class="social-btn" aria-label="Facebook" href="#"><span>f</span></a>
-            <a class="social-btn" aria-label="Instagram" href="#"><span>ig</span></a>
+            <a class="social-btn" aria-label="LinkedIn" href="https://www.linkedin.com/in/traceyleak/" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><rect x="6" y="13" width="4" height="11" rx="1"></rect><circle cx="8" cy="9" r="2"></circle><path d="M14 13h4v2c.8-1.5 2.1-2.2 3.7-2.2 2.4 0 4.3 1.6 4.3 4.6V24h-4v-5.5c0-1.3-.7-2.1-1.8-2.1s-2.2.9-2.2 2.4V24h-4z"></path></svg></a>
+            <a class="social-btn" aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61574908407957" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M19.5 7H22V3.5h-2.5C15 3.5 13 5.8 13 9.2V12h-3v3h3v11h4v-11h3l.5-3H17v-2.3c0-1.2.4-2.2 2.5-2.2Z"></path></svg></a>
+            <a class="social-btn" aria-label="Instagram" href="https://www.instagram.com/goldcoastbusinesscoaching" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="6"></rect><circle cx="16" cy="16" r="6"></circle><circle cx="23" cy="9" r="1.6"></circle></svg></a>
           </div>
           <a class="footer-cta" href="contact.html">Get started today</a>
         </div>
@@ -1236,5 +1297,19 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqDetails = document.querySelectorAll('.faq details');
+      faqDetails.forEach((detail) => {
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            faqDetails.forEach((other) => {
+              if (other !== detail) other.open = false;
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

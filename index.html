@@ -687,10 +687,19 @@
     }
 
     .contact-icon {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 20px;
       height: 20px;
-      color: var(--yellow-400);
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--yellow-400);
+      stroke-width: 2;
+      fill: none;
     }
 
     .footer-social {
@@ -704,18 +713,28 @@
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      background: var(--yellow-400);
+      background: #f7c948;
       display: grid;
       place-items: center;
-      color: var(--footer-bg);
+      color: #0b3f78;
       font-weight: 800;
       text-decoration: none;
       transition: transform 150ms ease, box-shadow 150ms ease;
+      border: none;
     }
 
     .social-btn:hover {
       transform: translateY(-1px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+      background: #f7d35a;
+    }
+
+    .social-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: #0b3f78;
+      stroke-width: 2;
+      fill: none;
     }
 
     .footer-cta {
@@ -869,7 +888,7 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--blue-700), var(--blue-900));
       color: var(--white);
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.12);
     }
 
     .btn-primary:hover {
@@ -1276,6 +1295,14 @@
       font-size: 1.1rem;
     }
 
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #0b3f78;
+      stroke-width: 2;
+      fill: none;
+    }
+
     .feature-title {
       margin: 0;
       font-weight: 800;
@@ -1389,17 +1416,17 @@
       display: grid;
       gap: 6px;
       justify-items: center;
-      background: #0b3f78;
+      background: #fff;
       border-radius: 12px;
       padding: 14px;
-      box-shadow: 0 12px 24px rgba(12, 27, 51, 0.16);
+      box-shadow: 0 12px 24px rgba(12, 27, 51, 0.12);
     }
 
     .inner-icon {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
+      background: #e8f0ff;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -1410,7 +1437,7 @@
     .inner-icon svg {
       width: 28px;
       height: 28px;
-      stroke: #fff;
+      stroke: #0b3f78;
       stroke-width: 2;
       fill: none;
     }
@@ -1418,13 +1445,13 @@
     .inner-feature-title {
       margin: 0;
       font-weight: 800;
-      color: #fff;
+      color: #0b3f78;
       font-size: 1rem;
     }
 
     .inner-feature-sub {
       margin: 0;
-      color: rgba(255, 255, 255, 0.8);
+      color: #6a7a95;
       font-size: 0.95rem;
     }
 
@@ -1536,6 +1563,14 @@
       color: #0b3f78;
     }
 
+    .coaching-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: #0b3f78;
+      stroke-width: 2;
+      fill: none;
+    }
+
     .coaching-card h4 {
       margin: 0;
       color: #0b3f78;
@@ -1618,16 +1653,7 @@
     }
 
     .about-feature-icon {
-      display: inline-flex;
-      width: 46px;
-      height: 46px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      background: #e8f0ff;
-      color: #0b3f78;
-      font-size: 1.2rem;
-      margin-bottom: 6px;
+      display: none;
     }
 
     .about-feature-title {
@@ -1805,7 +1831,7 @@
       background-image: var(--thumb, none);
       background-size: cover;
       background-position: center;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 9;
     }
 
     .video-tag {
@@ -2017,10 +2043,18 @@
       font-weight: 700;
     }
 
-    .workshop-meta span {
+    .workshop-meta .meta-item {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .workshop-meta svg {
+      width: 18px;
+      height: 18px;
+      stroke: #0b3f78;
+      stroke-width: 2;
+      fill: none;
     }
 
     .workshop-list {
@@ -2282,9 +2316,29 @@
       <div class="workshop-card fade-up" style="--delay: 140ms;">
         <p class="workshop-body">Ready to take control of your numbers and boost your profits? Join me for a practical, hands-on workshop created specifically for Gold Coast Business Owners. Together we’ll uncover the key drivers in your business, elevate your marketing and sales approach, and explore simply ways to increase your margins. With over 20 years of experience, I’ll give you the knowledge and confidence to grow your profits. This workshop is valued at $297, but it is completely FREE for you to register today.</p>
         <div class="workshop-meta">
-          <span>📍 Southport, Gold Coast</span>
-          <span>⏱️ 3 Hours</span>
-          <span>👥 Small Group Format</span>
+          <span class="meta-item">
+            <svg aria-hidden="true" viewBox="0 0 32 32">
+              <path d="M16 28s8-7 8-14a8 8 0 1 0-16 0c0 7 8 14 8 14Z"></path>
+              <circle cx="16" cy="14" r="3"></circle>
+            </svg>
+            <span>Southport, Gold Coast</span>
+          </span>
+          <span class="meta-item">
+            <svg aria-hidden="true" viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="11"></circle>
+              <path d="M16 9v8l5 3"></path>
+            </svg>
+            <span>3 Hours</span>
+          </span>
+          <span class="meta-item">
+            <svg aria-hidden="true" viewBox="0 0 32 32">
+              <circle cx="11" cy="13" r="3.2"></circle>
+              <circle cx="21" cy="13" r="3.2"></circle>
+              <path d="M5 23c0-3.3 2.7-6 6-6s6 2.7 6 6"></path>
+              <path d="M15 21.5c1-1.6 2.8-2.5 5-2.5 3.3 0 6 2.7 6 6"></path>
+            </svg>
+            <span>Small Group Format</span>
+          </span>
         </div>
         <div>
           <p class="workshop-section-title">What You'll Gain:</p>
@@ -2311,28 +2365,56 @@
         <p class="accelerator-body">You’re doing okay in business – but you know there's so much more potential. The 12 Week Profit Accelerator is a practical, hands-on program for Gold Coast Business Owners who want to step into the driver's seat, take control, and grow profits with confidence. We start with two deep-dive days, including a detailed review of your P&amp;L to uncover hidden profit pockets. Then we build your 90-day action plan and meet weekly to implement, troubleshoot and keep you accountable. By the end, you'll have real results, a clear roadmap, and the skills to keep accelerating long after the program ends.</p>
         <div class="accelerator-features">
           <div class="feature">
-            <span class="feature-icon">↗</span>
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M6 22.5 14.5 14l5 4L26 12.5" />
+                <path d="M18 12h8v8" />
+              </svg>
+            </span>
             <div>
               <p class="feature-title">Uncover Profit Pockets</p>
               <p class="feature-sub">Deep dive into your P&amp;L and numbers to find hidden profits</p>
             </div>
           </div>
           <div class="feature">
-            <span class="feature-icon">🗓️</span>
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <rect x="5" y="7" width="22" height="18" rx="3" ry="3"></rect>
+                <path d="M5 12h22"></path>
+                <path d="M11 4v6"></path>
+                <path d="M21 4v6"></path>
+              </svg>
+            </span>
             <div>
               <p class="feature-title">90 Day Plan</p>
               <p class="feature-sub">Create a clear roadmap with specific strategies tailored to your business</p>
             </div>
           </div>
           <div class="feature">
-            <span class="feature-icon">📅</span>
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <rect x="5" y="7" width="22" height="18" rx="3" ry="3"></rect>
+                <path d="M5 12h22"></path>
+                <path d="M11 4v6"></path>
+                <path d="M21 4v6"></path>
+                <path d="M12 18h8"></path>
+                <path d="M12 22h5"></path>
+              </svg>
+            </span>
             <div>
               <p class="feature-title">12 Weeks of Coaching</p>
               <p class="feature-sub">Meet in person each week to trouble shoot, stay accountable and continue learning</p>
             </div>
           </div>
           <div class="feature">
-            <span class="feature-icon">👥</span>
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <circle cx="11" cy="12" r="3.2"></circle>
+                <circle cx="21" cy="13" r="3"></circle>
+                <path d="M4 22c0-3.3 3-6 7-6s7 2.7 7 6"></path>
+                <path d="M16 21.5c1-1.3 2.6-2.4 4.7-2.4 3.2 0 5.8 2.5 5.8 5.6"></path>
+              </svg>
+            </span>
             <div>
               <p class="feature-title">Small Group Format</p>
               <p class="feature-sub">Learn from peers with ability for individualised coaching at the same time</p>
@@ -2418,7 +2500,7 @@
         <div class="one-to-one-copy fade-up" style="--delay: 80ms;">
           <span class="coaching-kicker">Individual Coaching</span>
           <h2 class="one-to-one-title">1-to-1 Strategy &amp; Coaching</h2>
-          <p class="one-to-one-sub">Personalised Support for Your Business</p>
+        <p class="one-to-one-sub" style="color:#0b3f78;">Personalised Support for Your Business</p>
           <p class="one-to-one-body">Sometimes you just need someone in your corner – someone to talk things out with, brainstorm ideas, and guide you to make smart, profitable decisions. Start with a one-off strategy session and from there we can determine if ongoing weekly coaching will be right for you. Together we'll work on your marketing, profit margins and high-level decisions so you can take control and turbocharge your results.</p>
           <div>
             <a class="btn btn-navy" href="one-to-one.html">Book a Strategy Session</a>
@@ -2426,21 +2508,38 @@
         </div>
         <div class="coaching-cards fade-up" style="--delay: 160ms;">
           <article class="coaching-card">
-            <span class="coaching-icon">💬</span>
+          <span class="coaching-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <path d="M5 6h22v15H11l-6 5z" />
+            </svg>
+          </span>
             <div>
               <h4>One-Off Strategy Session</h4>
               <p>Get clarity on a specific challenge or direction for your business or how to maximise an opportunity. Walk away with clear direction and strategies on your next steps in your business.</p>
             </div>
           </article>
           <article class="coaching-card">
-            <span class="coaching-icon">🗓️</span>
+          <span class="coaching-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <rect x="5" y="7" width="22" height="20" rx="2" ry="2"></rect>
+              <line x1="5" y1="12" x2="27" y2="12"></line>
+              <line x1="11" y1="4" x2="11" y2="9"></line>
+              <line x1="21" y1="4" x2="21" y2="9"></line>
+            </svg>
+          </span>
             <div>
               <h4>Ongoing Weekly Coaching</h4>
               <p>Regular 1-2-1 Sessions to keep you accountable to your plans, to troubleshoot challenges and to consistently move towards your goals with support.</p>
             </div>
           </article>
           <article class="coaching-card">
-            <span class="coaching-icon">🎯</span>
+          <span class="coaching-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="9"></circle>
+              <circle cx="16" cy="16" r="4"></circle>
+              <line x1="16" y1="7" x2="16" y2="3"></line>
+            </svg>
+          </span>
             <div>
               <h4>Strategic Focused</h4>
               <p>With the individual sessions, we place a strong focus on the strategies to work on and implement for more profitable business growth including marketing, sales, team, high level decision making and business operations.</p>
@@ -2571,17 +2670,17 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul class="contact-list">
-            <li class="contact-item"><span class="contact-icon">✉️</span><span>tracey@traceyleak.com</span></li>
-            <li class="contact-item"><span class="contact-icon">☎️</span><span>0407 564 119</span></li>
-            <li class="contact-item"><span class="contact-icon">📍</span><span>Suite 31011 (Level 10), 9 Lawson St, Southport Qld 4215</span></li>
+            <li class="contact-item"><span class="contact-icon"><svg viewBox="0 0 32 24"><rect x="3" y="4" width="26" height="16" rx="2" ry="2"></rect><path d="M3 6.5 16 14l13-7.5"></path></svg></span><span>tracey@traceyleak.com</span></li>
+            <li class="contact-item"><span class="contact-icon"><svg viewBox="0 0 32 32"><path d="M8.5 7h3l2 5-3 2a10 10 0 0 0 7.5 7.5l2-3 5 2v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 5.5 9a2 2 0 0 1 2-2Z"></path></svg></span><span>0407 564 119</span></li>
+            <li class="contact-item"><span class="contact-icon"><svg viewBox="0 0 32 32"><path d="M16 28s8-7 8-14a8 8 0 1 0-16 0c0 7 8 14 8 14Z"></path><circle cx="16" cy="14" r="3"></circle></svg></span><span>Suite 31011 (Level 10), 9 Lawson St, Southport Qld 4215</span></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Follow</h4>
           <div class="footer-social">
-            <a class="social-btn" aria-label="LinkedIn" href="#"><span>in</span></a>
-            <a class="social-btn" aria-label="Facebook" href="#"><span>f</span></a>
-            <a class="social-btn" aria-label="Instagram" href="#"><span>ig</span></a>
+            <a class="social-btn" aria-label="LinkedIn" href="https://www.linkedin.com/in/traceyleak/" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><rect x="6" y="13" width="4" height="11" rx="1"></rect><circle cx="8" cy="9" r="2"></circle><path d="M14 13h4v2c.8-1.5 2.1-2.2 3.7-2.2 2.4 0 4.3 1.6 4.3 4.6V24h-4v-5.5c0-1.3-.7-2.1-1.8-2.1s-2.2.9-2.2 2.4V24h-4z"></path></svg></a>
+            <a class="social-btn" aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61574908407957" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M19.5 7H22V3.5h-2.5C15 3.5 13 5.8 13 9.2V12h-3v3h3v11h4v-11h3l.5-3H17v-2.3c0-1.2.4-2.2 2.5-2.2Z"></path></svg></a>
+            <a class="social-btn" aria-label="Instagram" href="https://www.instagram.com/goldcoastbusinesscoaching" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="6"></rect><circle cx="16" cy="16" r="6"></circle><circle cx="23" cy="9" r="1.6"></circle></svg></a>
           </div>
           <a class="footer-cta" href="contact.html">Get started today</a>
         </div>
