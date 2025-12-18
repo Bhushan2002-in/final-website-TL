@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gold Coast Business Coaching</title>
-  <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/logo.png" type="image/png">
+  <link rel="icon" href="https://ik.imagekit.io/q0gorn2pwv/Logo%20Transparent%20Hi%20Resolution%20Gold%20Coast%20Business%20Coaching.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,9 +13,9 @@
       --blue-900: #0a3c99;
       --blue-700: #0f5fc7;
       --blue-100: #e6f0ff;
-      --yellow-400: #f7c948;
-      --yellow-200: #fdecb5;
-      --yellow-100: #fff7de;
+      --yellow-400: #ffde59;
+      --yellow-200: #fff0b3;
+      --yellow-100: #fff8de;
       --white: #ffffff;
       --text-main: #0b234a;
       --text-muted: #4a5a7a;
@@ -34,7 +34,7 @@
       font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
       background:
         radial-gradient(140% 120% at 100% 0%, rgba(15, 95, 199, 0.08), transparent 55%),
-        radial-gradient(90% 70% at 14% 16%, rgba(247, 201, 72, 0.1), transparent 55%),
+        radial-gradient(90% 70% at 14% 16%, rgba(255, 222, 89, 0.1), transparent 55%),
         var(--white);
       color: var(--text-main);
       line-height: 1.6;
@@ -250,7 +250,7 @@
 
     .banner-strip {
       margin: 18px 0 14px 0;
-      background: linear-gradient(90deg, rgba(15, 95, 199, 0.12), rgba(247, 201, 72, 0.35), rgba(15, 95, 199, 0.12));
+      background: linear-gradient(90deg, rgba(15, 95, 199, 0.12), rgba(255, 222, 89, 0.35), rgba(15, 95, 199, 0.12));
       border-radius: 999px;
       overflow: hidden;
       border: 1px solid rgba(12, 27, 51, 0.06);
@@ -289,7 +289,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--yellow-400);
-      box-shadow: 0 0 0 4px rgba(247, 201, 72, 0.28);
+      box-shadow: 0 0 0 4px rgba(255, 222, 89, 0.28);
     }
 
     @keyframes bannerSlide {
@@ -371,7 +371,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(15, 95, 199, 0.04), rgba(247, 201, 72, 0.06));
+      background: linear-gradient(135deg, rgba(15, 95, 199, 0.04), rgba(255, 222, 89, 0.06));
       opacity: 0;
       transition: opacity 180ms ease;
       z-index: 0;
@@ -404,14 +404,20 @@
     }
 
     /* Custom tile colors for the four services */
-    #path-to-profit,
-    #one-to-one {
+    #path-to-profit {
       background: linear-gradient(180deg, #e8f4ff 0%, #c9ddff 100%);
     }
 
-    #profit-accelerator,
-    #inner-circle {
+    #one-to-one {
+      background: #0b3f78;
+    }
+
+    #profit-accelerator {
       background: none;
+    }
+
+    #inner-circle {
+      background: #e6f0ff;
     }
 
     .service-tag {
@@ -713,7 +719,7 @@
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      background: #f7c948;
+      background: #ffde59;
       display: grid;
       place-items: center;
       color: #0b3f78;
@@ -908,15 +914,15 @@
     }
 
     .btn-gold {
-      background: linear-gradient(135deg, #f7c948, #f5a524);
+      background: linear-gradient(135deg, #ffde59, #ffd11a);
       color: var(--blue-900);
-      box-shadow: 0 12px 26px rgba(247, 201, 72, 0.35);
+      box-shadow: 0 12px 26px rgba(255, 222, 89, 0.35);
       border: none;
     }
 
     .btn-gold:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 32px rgba(247, 201, 72, 0.45);
+      box-shadow: 0 16px 32px rgba(255, 222, 89, 0.45);
     }
 
     .btn-navy {
@@ -997,7 +1003,7 @@
     .meta-pill {
       padding: 10px 12px;
       border-radius: 12px;
-      background: rgba(247, 201, 72, 0.24);
+      background: rgba(255, 222, 89, 0.24);
       color: var(--blue-900);
     }
 
@@ -1022,6 +1028,8 @@
       border-radius: 14px;
       object-fit: cover;
       aspect-ratio: 4 / 3;
+      transform: scale(1.28);
+      transform-origin: center;
     }
 
     .orb {
@@ -1031,7 +1039,7 @@
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 35%, rgba(15, 95, 199, 0.3), transparent 60%),
-        radial-gradient(circle at 70% 70%, rgba(247, 201, 72, 0.45), transparent 60%);
+        radial-gradient(circle at 70% 70%, rgba(255, 222, 89, 0.45), transparent 60%);
       top: -60px;
       right: -40px;
       filter: blur(10px);
@@ -1083,8 +1091,8 @@
       gap: 8px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
+      background: #ffde59;
+      color: #0b3f78;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -1131,7 +1139,7 @@
       padding: 14px;
       border-radius: 18px;
       box-shadow: var(--shadow);
-      max-width: 420px;
+      max-width: 500px;
       width: 100%;
     }
 
@@ -1198,6 +1206,22 @@
       gap: 18px;
     }
 
+    .program-visual {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 32px rgba(12, 27, 51, 0.18);
+      margin: 6px 0 18px;
+      background: linear-gradient(135deg, rgba(11, 63, 120, 0.1), rgba(255, 222, 89, 0.12));
+    }
+
+    .program-visual img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
     .workshop-heading {
       display: grid;
       gap: 8px;
@@ -1226,7 +1250,7 @@
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      background: #f7c948;
+      background: #ffde59;
       color: #0b3f78;
       border-radius: 999px;
       font-weight: 800;
@@ -1288,7 +1312,7 @@
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: rgba(247, 201, 72, 0.2);
+      background: #ffde59;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -1334,7 +1358,7 @@
     /* Inner Circle */
     .inner-circle {
       padding: 100px 0 120px;
-      background: #fdfbf8;
+      background: #e6f0ff;
     }
 
     .inner-circle .container {
@@ -1375,13 +1399,16 @@
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      background: #ffde59;
+      color: #0b3f78;
       border-radius: 999px;
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       font-size: 0.82rem;
+      width: fit-content;
+      justify-self: start;
+      align-self: start;
     }
 
     .inner-title {
@@ -1468,21 +1495,21 @@
       justify-content: center;
       padding: 12px 18px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #f7c948, #f5a524);
+      background: linear-gradient(135deg, #ffde59, #ffd11a);
       color: #0b3f78;
       font-weight: 800;
-      border: 1px solid #f5a524;
-      box-shadow: 0 12px 24px rgba(247, 201, 72, 0.35);
+      border: 1px solid #ffd11a;
+      box-shadow: 0 12px 24px rgba(255, 222, 89, 0.35);
     }
 
     .inner-cta:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 32px rgba(247, 201, 72, 0.4);
+      box-shadow: 0 16px 32px rgba(255, 222, 89, 0.4);
     }
 
     /* 1-to-1 Strategy & Coaching */
     .one-to-one-section {
-      background: #f5f7fb;
+      background: #0b3f78;
       padding: 100px 0 120px;
     }
 
@@ -1503,7 +1530,7 @@
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      background: #e8f0ff;
+      background: #ffde59;
       color: #0b3f78;
       border-radius: 999px;
       font-weight: 800;
@@ -1511,25 +1538,27 @@
       text-transform: uppercase;
       font-size: 0.82rem;
       width: fit-content;
+      justify-self: start;
+      align-self: start;
     }
 
     .one-to-one-title {
       margin: 0;
       font-size: clamp(2.2rem, 2vw + 1rem, 2.8rem);
-      color: #0b3f78;
+      color: #ffffff;
       letter-spacing: -0.4px;
     }
 
     .one-to-one-sub {
       margin: 0;
-      color: #2f3f59;
+      color: #eaf2ff;
       font-size: 1.08rem;
       font-weight: 700;
     }
 
     .one-to-one-body {
       margin: 0;
-      color: #3a4a66;
+      color: #e0e9ff;
       font-size: 1.02rem;
       line-height: 1.7;
     }
@@ -1644,12 +1673,12 @@
     }
 
     .about-feature-card {
-      background: #f5f7fb;
+      background: #0b3f78;
       border-radius: 12px;
       padding: 14px;
       text-align: center;
-      box-shadow: 0 12px 26px rgba(12, 27, 51, 0.1);
-      border: 1px solid rgba(12, 27, 51, 0.05);
+      box-shadow: 0 12px 26px rgba(11, 63, 120, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .about-feature-icon {
@@ -1658,14 +1687,14 @@
 
     .about-feature-title {
       margin: 0;
-      color: #0b3f78;
+      color: #ffffff;
       font-weight: 800;
       font-size: 1rem;
     }
 
     .about-feature-sub {
       margin: 4px 0 0 0;
-      color: #6a7a95;
+      color: #ffffff;
       font-size: 0.93rem;
       line-height: 1.5;
     }
@@ -1915,7 +1944,7 @@
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: #f7c948;
+      background: #ffde59;
       display: grid;
       place-items: center;
       color: #0b3f78;
@@ -2000,7 +2029,7 @@
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      background: #e8f0ff;
+      background: #ffde59;
       color: #0b3f78;
       border-radius: 999px;
       font-weight: 800;
@@ -2074,7 +2103,7 @@
     }
 
     .workshop-list .dot {
-      color: #f5a524;
+      color: #ffd11a;
       font-size: 1rem;
       line-height: 1.6;
     }
@@ -2236,7 +2265,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Gold Coast Business Coaching">
-        <img src="https://ik.imagekit.io/q0gorn2pwv/logo.png" alt="Gold Coast Business Coaching logo" loading="lazy">
+        <img src="https://ik.imagekit.io/q0gorn2pwv/Logo%20Transparent%20Hi%20Resolution%20Gold%20Coast%20Business%20Coaching.png" alt="Gold Coast Business Coaching logo" loading="lazy">
         <span class="sr-only">Gold Coast Business Coaching</span>
       </a>
       <div class="nav-right">
@@ -2294,7 +2323,7 @@
               <input id="offer-email" type="email" name="email" placeholder="Enter your email" required>
               <button class="btn btn-gold" type="submit">Download Free</button>
             </form>
-            <p class="offer-note">No spam—just practical guidance you can use right away.</p>
+            
           </div>
           <div class="ebook-offer-visual fade-up" style="--delay: 220ms;">
             <div class="offer-image-frame">
@@ -2314,6 +2343,9 @@
         <p class="workshop-sub">Your Roadmap to a More Profitable Business</p>
       </div>
       <div class="workshop-card fade-up" style="--delay: 140ms;">
+        <div class="program-visual">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/download.jpeg" alt="Path to Profits workshop illustration">
+        </div>
         <p class="workshop-body">Ready to take control of your numbers and boost your profits? Join me for a practical, hands-on workshop created specifically for Gold Coast Business Owners. Together we’ll uncover the key drivers in your business, elevate your marketing and sales approach, and explore simply ways to increase your margins. With over 20 years of experience, I’ll give you the knowledge and confidence to grow your profits. This workshop is valued at $297, but it is completely FREE for you to register today.</p>
         <div class="workshop-meta">
           <span class="meta-item">
@@ -2350,7 +2382,7 @@
           </ul>
         </div>
         <div class="workshop-cta">
-          <a class="btn btn-navy" href="path-to-profit.html">Register Today</a>
+          <a class="btn btn-gold" href="path-to-profit.html">Register Today</a>
         </div>
       </div>
     </div>
@@ -2362,6 +2394,9 @@
       <h2 class="accelerator-title fade-up" style="--delay: 120ms;">12 Week Profit Accelerator</h2>
       <p class="accelerator-sub fade-up" style="--delay: 160ms;">Take your Business from Good to Great!</p>
       <div class="accelerator-card fade-up" style="--delay: 220ms;">
+        <div class="program-visual">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/download.jpeg" alt="Profit Accelerator planning session">
+        </div>
         <p class="accelerator-body">You’re doing okay in business – but you know there's so much more potential. The 12 Week Profit Accelerator is a practical, hands-on program for Gold Coast Business Owners who want to step into the driver's seat, take control, and grow profits with confidence. We start with two deep-dive days, including a detailed review of your P&amp;L to uncover hidden profit pockets. Then we build your 90-day action plan and meet weekly to implement, troubleshoot and keep you accountable. By the end, you'll have real results, a clear roadmap, and the skills to keep accelerating long after the program ends.</p>
         <div class="accelerator-features">
           <div class="feature">
@@ -2430,8 +2465,11 @@
 
   <section class="inner-circle" id="inner-circle">
     <div class="container">
-      <div class="inner-card fade-up" style="--delay: 100ms;">
-        <span class="inner-kicker">Exclusive Mastermind</span>
+        <div class="inner-card fade-up" style="--delay: 100ms;">
+          <span class="inner-kicker">Exclusive Mastermind</span>
+        <div class="program-visual">
+          <img src="https://ik.imagekit.io/q0gorn2pwv/download.jpeg" alt="Inner Circle mastermind session">
+        </div>
         <h2 class="inner-title">Inner Circle Mastermind</h2>
         <p class="inner-sub">For Gold Coast Business Owners Ready to Scale &amp; Grow</p>
         <p class="inner-body">The Inner Circle Mastermind is an exclusive 12-month program designed for established Gold Coast Business Owners who are ready to break through to the next level. You’ll get expert coaching, peer accountability, guest speakers and tailored support – all in a small, highly engaged group format. We meet monthly for a one- day intensive workshop, plus weekly ‘office hours’ access for Q&amp;A with Tracey. If you’re ambitious about growing your business and becoming a high-performing leader, register your interest today to start the application process to secure a spot for 2026.</p>
@@ -2500,13 +2538,16 @@
         <div class="one-to-one-copy fade-up" style="--delay: 80ms;">
           <span class="coaching-kicker">Individual Coaching</span>
           <h2 class="one-to-one-title">1-to-1 Strategy &amp; Coaching</h2>
-        <p class="one-to-one-sub" style="color:#0b3f78;">Personalised Support for Your Business</p>
+        <p class="one-to-one-sub">Personalised Support for Your Business</p>
           <p class="one-to-one-body">Sometimes you just need someone in your corner – someone to talk things out with, brainstorm ideas, and guide you to make smart, profitable decisions. Start with a one-off strategy session and from there we can determine if ongoing weekly coaching will be right for you. Together we'll work on your marketing, profit margins and high-level decisions so you can take control and turbocharge your results.</p>
           <div>
-            <a class="btn btn-navy" href="one-to-one.html">Book a Strategy Session</a>
+            <a class="btn btn-gold" href="one-to-one.html">Book a Strategy Session</a>
           </div>
         </div>
         <div class="coaching-cards fade-up" style="--delay: 160ms;">
+          <div class="program-visual">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/download.jpeg" alt="One-to-one coaching session">
+          </div>
           <article class="coaching-card">
           <span class="coaching-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32">
@@ -2655,7 +2696,7 @@
       <div class="footer-top">
         <div class="footer-col footer-brand">
           <img src="https://ik.imagekit.io/q0gorn2pwv/logo.png" alt="Gold Coast Business Coaching logo">
-          <p class="footer-text">Helping Gold Coast business owners grow profitability with practical, actionable coaching.</p>
+          <p class="footer-text">Helping Gold Coast business owners grow profitability with practical coaching</p>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
@@ -2681,8 +2722,9 @@
             <a class="social-btn" aria-label="LinkedIn" href="https://www.linkedin.com/in/traceyleak/" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><rect x="6" y="13" width="4" height="11" rx="1"></rect><circle cx="8" cy="9" r="2"></circle><path d="M14 13h4v2c.8-1.5 2.1-2.2 3.7-2.2 2.4 0 4.3 1.6 4.3 4.6V24h-4v-5.5c0-1.3-.7-2.1-1.8-2.1s-2.2.9-2.2 2.4V24h-4z"></path></svg></a>
             <a class="social-btn" aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61574908407957" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M19.5 7H22V3.5h-2.5C15 3.5 13 5.8 13 9.2V12h-3v3h3v11h4v-11h3l.5-3H17v-2.3c0-1.2.4-2.2 2.5-2.2Z"></path></svg></a>
             <a class="social-btn" aria-label="Instagram" href="https://www.instagram.com/goldcoastbusinesscoaching" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="6"></rect><circle cx="16" cy="16" r="6"></circle><circle cx="23" cy="9" r="1.6"></circle></svg></a>
+            <a class="social-btn" aria-label="TikTok" href="https://www.tiktok.com/@goldcoastbusiness" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true" style="fill: currentColor; stroke: none;"><path d="M20 7.2c.9 1.7 2.4 2.8 4.2 3v3.5c-1.6-.1-3.1-.7-4.2-1.6v7.5a6.5 6.5 0 1 1-6.5-6.5c.5 0 1 .1 1.5.2v3.5a3.2 3.2 0 0 0-1.2-.2 3 3 0 1 0 3 3V7.2Z"></path></svg></a>
           </div>
-          <a class="footer-cta" href="contact.html">Get started today</a>
+          <a class="footer-cta" href="contact.html">Contact Us</a>
         </div>
       </div>
       <hr class="footer-divider">
