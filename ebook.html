@@ -281,12 +281,14 @@
       font-size: 1.35rem;
       letter-spacing: -0.2px;
       line-height: 1.35;
+      text-align: center;
     }
 
     .hero-card p {
       margin: 0 0 12px;
       color: var(--text-muted);
       font-size: 1rem;
+      text-align: center;
     }
 
     .hero-form {
@@ -333,7 +335,8 @@
     .tips-section h2 {
       margin-top: 0;
       margin-bottom: 18px;
-      color: #0b3f78;
+      color: #0a3c99;
+      text-align: center;
     }
 
     .tips-flex {
@@ -382,20 +385,21 @@
     }
 
     .bottom-cta {
-      background: #eef4ff;
-      padding: 36px 0;
+      background: linear-gradient(180deg, #e9f2ff 0%, #f7fbff 100%);
+      padding: 24px 0 28px;
     }
 
     .bottom-cta .cta-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 18px 18px 20px;
-      border: 1px solid rgba(12, 27, 51, 0.08);
-      box-shadow: 0 14px 28px rgba(12, 27, 51, 0.12);
-      text-align: center;
+      background: linear-gradient(135deg, #ffffff 0%, #f4f8ff 100%);
+      border-radius: 22px;
+      padding: 24px;
+      border: 1px solid rgba(11, 63, 120, 0.08);
+      box-shadow: 0 24px 48px rgba(12, 27, 51, 0.14);
       display: grid;
-      gap: 10px;
-      max-width: 900px;
+      grid-template-columns: minmax(360px, 1.2fr) minmax(280px, 0.9fr);
+      gap: 22px;
+      align-items: center;
+      max-width: 1140px;
       margin: 0 auto;
     }
 
@@ -410,6 +414,32 @@
       color: var(--text-muted);
       font-size: 1.05rem;
       line-height: 1.7;
+    }
+
+    .cta-copy {
+      display: grid;
+      gap: 12px;
+      text-align: left;
+      align-items: start;
+    }
+
+    .cta-visual {
+      justify-self: center;
+      background: #f7f9ff;
+      border-radius: 18px;
+      padding: 12px;
+      border: 1px solid rgba(11, 63, 120, 0.1);
+      box-shadow: 0 18px 32px rgba(12, 27, 51, 0.12);
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .cta-visual img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      object-fit: cover;
+      height: 360px;
     }
 
     .cta-after-tips {
@@ -538,7 +568,7 @@
     .tips-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 22px;
       align-items: stretch;
       justify-content: center;
       margin-top: 12px;
@@ -629,8 +659,8 @@
       background: #fff;
       border-radius: 18px;
       padding: 18px 18px 20px;
-      border: 1px solid rgba(12, 27, 51, 0.06);
-      box-shadow: 0 16px 32px rgba(12, 27, 51, 0.08);
+      border: 1px solid rgba(11, 63, 120, 0.12);
+      box-shadow: 0 16px 32px rgba(11, 63, 120, 0.08);
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 12px 14px;
@@ -638,19 +668,27 @@
       flex: 1 1 300px;
       max-width: 360px;
       min-width: 260px;
+      transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(11, 63, 120, 0.16);
+      border-color: rgba(11, 63, 120, 0.25);
     }
 
     .tip-number {
       width: 48px;
       height: 48px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--blue-700), var(--yellow-400));
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      color: #fff;
+      border: 2px solid #0a3c99;
+      color: #0a3c99;
       font-weight: 800;
       font-size: 1.05rem;
-      box-shadow: 0 12px 22px rgba(12, 27, 51, 0.18);
+      background: #f5f7fb;
+      box-shadow: none;
     }
 
     .tip-card h3 {
@@ -1025,7 +1063,7 @@
             <img src="https://ik.imagekit.io/q0gorn2pwv/ebook-5hkBKkjV.jpeg?updatedAt=1764686434634" alt="101 Tips for Small Business Owners book cover">
           </div>
           <div class="why-copy">
-            <h3>Even if you don't like to read, this is the book for you...</h3>
+            <h3>Even if you don't like to read then<br>this is the book for you...</h3>
             <p>You can read a tip a day or one a week, or a few at a time. This is a book you can pick up, grab a tip in 5 to 10 minutes and then put the book down and not feel like you will lose your place. Written specifically for Business Owners who don't like to read or lack the time to read.</p>
           </div>
         </div>
@@ -1034,19 +1072,32 @@
 
     <section class="tips-section" id="tips">
       <div class="container">
-        <div class="tips-flex">
-          <div>
-            <ul class="tip-text-list">
-              <h2>You don't want to miss...</h2>
-              <li><strong>Tip # 1 -</strong>We start off with a bang and talk about knowing your numbers (even if you hated maths at school) to grow your profits!</li>
-              <li><strong>Tip # 13 -</strong>Want more customers for your business? Want to become a marketing genius without having to do a 4 year degree? Then you will want to read this tip.</li>
-              <li><strong>Tip # 56 -</strong>Increasing your conversion rate is the fastest way to increase profits ... and it won't cost you a cent. This tip will take away the fear of selling and make your conversion rate go rocketing up!</li>
-              <li><strong>Tip # 83 -</strong>Time poor? Learn my number 1 tip on how to get control on your time and it is easier than you think and simple to implement... all in less than 1% of all the time available to you in a week.</li>
-              <li><strong>Tip # 97 -</strong>A little thing that is actually a HUGE thing in business to get right. Want to know what it is?</li>
-            </ul>
+        <h2>You don't want to miss...</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-number">#1</div>
+            <h3>Know Your Numbers</h3>
+            <p>We start off with a bang and talk about knowing your numbers (even if you hated maths at school) to grow your profits!</p>
           </div>
-          <div class="tips-image-card">
-            <img class="tips-cover" src="https://ik.imagekit.io/q0gorn2pwv/S4MyQZBkT52y8htAfgx1_file.jpeg" alt="101 Tips for Small Business Owners eBook cover">
+          <div class="tip-card">
+            <div class="tip-number">#13</div>
+            <h3>Marketing Genius</h3>
+            <p>Want more customers for your business? Want to become a marketing genius without a 4-year degree? Then you will want to read this tip.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">#56</div>
+            <h3>Boost Conversions</h3>
+            <p>Increasing your conversion rate is the fastest way to increase profits. This tip takes away the fear of selling and will send your conversion rate skyrocketing.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">#83</div>
+            <h3>Time Control</h3>
+            <p>Time poor? Learn my number one tip on how to get control of your time—simple to implement and takes less than 1% of your week.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">#97</div>
+            <h3>The Small Big Thing</h3>
+            <p>A little thing that is actually a HUGE thing in business to get right. Want to know what it is?</p>
           </div>
         </div>
       </div>
@@ -1055,8 +1106,13 @@
     <section class="bottom-cta">
       <div class="container">
         <div class="cta-box">
-          <h3>There are 101 gems of information to help you grow and build a more profitable business... all yours for FREE!</h3>
-          <p>Don't miss this chance to grab your copy for FREE. Essential reading for every Small Business Owner. Scroll up and enter your details to download your copy today for FREE.</p>
+          <div class="cta-copy">
+            <h3>There are 101 gems of information to help you grow and build a more profitable business... all yours for FREE!</h3>
+            <p>Don't miss this chance to grab your copy for FREE. Essential reading for every Small Business Owner. Scroll up and enter your details to download your copy today for FREE.</p>
+          </div>
+          <div class="cta-visual" aria-hidden="true">
+            <img src="https://ik.imagekit.io/q0gorn2pwv/S4MyQZBkT52y8htAfgx1_file.jpeg?updatedAt=1765522475978" alt="101 Tips for Small Business Owners ebook cover placeholder">
+          </div>
         </div>
       </div>
     </section>
