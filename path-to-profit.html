@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue-900: #0a3c99;
-      --blue-700: #0f5fc7;
+      --blue-900: #0b3f78;
+      --blue-700: #0b3f78;
       --blue-100: #e6f0ff;
       --yellow-400: #ffde59;
       --yellow-200: #fff0b3;
@@ -157,7 +157,7 @@
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 8px);
+      top: 100%;
       left: 0;
       min-width: 220px;
       background: var(--white);
@@ -174,7 +174,8 @@
     }
 
     .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu {
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown-menu:hover {
       opacity: 1;
       pointer-events: auto;
     }
@@ -262,7 +263,7 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: var(--yellow-200);
+      background: linear-gradient(135deg, #ffde59 0%, #f6c81c 100%);
       color: var(--blue-900);
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -360,9 +361,10 @@
 
     .hero-subheading {
       margin: 10px 0 0;
-      font-size: 1.08rem;
+      font-size: clamp(1.15rem, 1.8vw + 0.5rem, 1.6rem);
       color: var(--text-main);
       font-weight: 700;
+      line-height: 1.35;
     }
 
     .btn {
@@ -472,24 +474,40 @@
       line-height: 1.65;
     }
 
+    .about-grid.facilitator-layout {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+    }
+
+    .about-grid.facilitator-layout .about-image {
+      max-width: 420px;
+      justify-self: end;
+    }
+
+    .about-grid.facilitator-layout .about-image img {
+      transform: scale(1.08);
+      object-position: center;
+    }
+
 
     .details {
-      padding: 28px 0;
+      padding: 38px 0;
+      background: var(--blue-900);
     }
 
     .details-card {
-      background: linear-gradient(135deg, #f6f9ff 0%, #fefaf0 100%);
+      background: transparent;
       border-radius: 22px;
-      padding: 22px;
-      border: 1px solid rgba(12, 27, 51, 0.06);
-      box-shadow: 0 22px 40px rgba(12, 27, 51, 0.12);
+      padding: 10px 18px;
+      border: none;
+      box-shadow: none;
       display: grid;
-      gap: 14px;
+      gap: 18px;
     }
 
     .details h2 {
       margin: 0 0 10px;
-      color: var(--blue-900);
+      color: #ffffff;
       font-size: 1.8rem;
       letter-spacing: -0.3px;
       text-align: center;
@@ -498,15 +516,19 @@
     .details-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
+      gap: 18px;
+      align-items: start;
     }
 
     .detail-block {
       background: #fff;
-      border-radius: 14px;
-      padding: 16px;
+      border-radius: 18px;
+      padding: 18px 18px 20px;
       border: 1px solid rgba(12, 27, 51, 0.06);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 12px 26px rgba(12, 27, 51, 0.08);
+      box-shadow: 0 16px 32px rgba(12, 27, 51, 0.12);
+      display: grid;
+      gap: 10px;
+      align-content: start;
     }
 
     .detail-block h4 {
@@ -517,8 +539,12 @@
     }
 
     .detail-block p {
-      margin: 0;
+      margin: 0 0 10px;
       color: var(--text-muted);
+    }
+
+    .detail-subheading {
+      margin-top: 20px;
     }
 
     .date-list {
@@ -526,20 +552,24 @@
       margin: 0;
       padding: 0;
       display: grid;
-      gap: 10px;
+      gap: 14px;
+      align-items: start;
     }
 
     .date-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 0;
-      background: transparent;
-      border: none;
-      border-radius: 0;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
       font-weight: 800;
-      color: var(--blue-900);
-      box-shadow: none;
+      color: #0c1b33;
+      box-shadow: 0 12px 26px rgba(12, 27, 51, 0.2);
+      width: 100%;
+      max-width: 420px;
+      letter-spacing: -0.15px;
     }
 
     .date-dot {
@@ -552,29 +582,15 @@
     }
 
     .spec-card {
-      background: #fff;
+      background: var(--blue-900);
       border-radius: 16px;
       padding: 18px;
-      border: 1px solid #dfe7f3;
-      box-shadow: 0 12px 28px rgba(12, 27, 51, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 12px 28px rgba(12, 27, 51, 0.12);
       display: grid;
       gap: 10px;
       position: relative;
       overflow: hidden;
-    }
-
-    .spec-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(12, 27, 51, 0.04), rgba(255, 222, 89, 0.05));
-      opacity: 0;
-      transition: opacity 160ms ease;
-      z-index: 0;
-    }
-
-    .spec-card:hover::before {
-      opacity: 1;
     }
 
     .spec-card > * {
@@ -586,18 +602,18 @@
       width: 48px;
       height: 48px;
       border-radius: 14px;
-      background: linear-gradient(135deg, #f7faff 0%, #eef2ff 100%);
+      background: rgba(255, 255, 255, 0.15);
       display: grid;
       place-items: center;
-      color: var(--blue-900);
-      border: 1px solid #d8e3ff;
-      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 22px rgba(12, 27, 51, 0.18);
     }
 
     .spec-icon svg {
       width: 24px;
       height: 24px;
-      stroke: #0b3f78;
+      stroke: #ffffff;
       stroke-width: 2.2;
       fill: none;
       stroke-linecap: round;
@@ -612,13 +628,13 @@
 
     .spec-card h3 {
       margin: 0;
-      color: var(--blue-900);
+      color: #ffffff;
       font-size: 1.1rem;
     }
 
     .spec-card p {
       margin: 0;
-      color: var(--text-muted);
+      color: rgba(255, 255, 255, 0.92);
       font-size: 0.98rem;
       line-height: 1.6;
     }
@@ -995,15 +1011,12 @@
         <div class="hero-visual panel">
           <video src="https://ik.imagekit.io/q0gorn2pwv/file-uploads_sites_71423_video_feeba6d-472-d6c0-474f-b4d23035e73b_V2_P2P_Intro.MOV.mp4" autoplay muted playsinline controls></video>
         </div>
-        <p class="lead hero-sub">Join Tracey for a hands-on workshop that diagnoses your profit drivers, sharpens your offers, and leaves you with a 90-day plan you can act on immediately.</p>
       </div>
     </section>
 
     <section class="cta-banner">
-      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to Learn how to grow the profits of your business. (Valued at $297)</h2>
-      <p>(Next Date... Thursday 22nd January, 2026 - 9am to 12noon)</p>
+      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to learn how to grow the profits of your business.</h2>
       <a class="cta-button" style="background: var(--blue-700);" href="contact.html">Register Now</a>
-      <div class="cta-note">Seats are limited. Workshop is free (valued at $297).</div>
     </section>
 
     <section class="about-workshop">
@@ -1072,31 +1085,30 @@
       <div class="details-card">
         <div class="details-grid">
           <div class="detail-block">
-            <h4>Upcoming Workshop Dates</h4>
+            <h4>Workshop Dates</h4>
             <ul class="date-list">
-              <li class="date-item"><span class="date-dot"></span>January Thursday 22nd, 2026</li>
-              
+              <li class="date-item"><span class="date-dot"></span>Friday 13th March</li>
+              <li class="date-item"><span class="date-dot"></span>Saturday 11th April</li>
+              <li class="date-item"><span class="date-dot"></span>Friday 1st May</li>
             </ul>
           </div>
           <div class="detail-block">
-            <h4>Where</h4>
-            <p>Gold Coast Business Coaching<br>Suite 31011 (Level 10)<br>Tower 3 (Red)<br>9 Lawson St<br>Southport</p>
+            <h4>Time</h4>
+            <p>9am to 12 noon</p>
+            <h4 class="detail-subheading">Investment</h4>
+            <p>Free (Valued at $297)</p>
           </div>
           <div class="detail-block">
-            <h4>Time & Investment</h4>
-            <p><strong style="color:var(--blue-900);">Time:</strong> 9am to 12noon</p>
-            <p><strong style="color:var(--blue-900);">Investment:</strong> Free (Valued at $297)</p>
-            
+            <h4>Where</h4>
+            <p>Gold Coast Business Coaching<br>Suite 31011 (Level 10)<br>Tower 3 (Red)<br>9 Lawson St, Southport 4215</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="cta-banner">
-      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to Learn how to grow the profits of your business. (Valued at $297)</h2>
-      <p>(Next Date... Thursday 22nd January, 2026 - 9am to 12noon)</p>
+      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to learn how to grow the profits of your business.</h2>
       <a class="cta-button" style="background: var(--blue-700);" href="contact.html">Register Now</a>
-      <div class="cta-note">Seats are limited. Workshop is free (valued at $297).</div>
     </section>
 
     <section class="section" id="testimonials">
@@ -1150,7 +1162,7 @@
     </div>
 
     <section class="about-workshop" id="facilitator">
-      <div class="about-grid">
+      <div class="about-grid facilitator-layout">
         <div class="about-copy">
           <h2>Meet Your Workshop Facilitator...</h2>
           <p>Tracey has been coaching, training and speaking to small business owners for the last 20 years! She is a best selling author and has spoken on business stages all around Australia and overseas, but lives right here on the Gold Coast.</p>
@@ -1181,8 +1193,9 @@
           Southport</p>
           <p>Workshop is 8.45am for a 9am start. We finish at 12 noon.</p>
           <p>Upcoming dates:<br>
-          Thursday 22nd January, 2026<br>
-          Friday 13th February, 2026</p>
+          Friday 13th March<br>
+          Saturday 11th April<br>
+          Friday 1st May</p>
         </details>
         <details>
           <summary>What do I need to do/bring/wear for the event?</summary>
@@ -1216,10 +1229,8 @@
     </section>
 
     <section class="cta-banner" style="padding-bottom: 64px;">
-      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to Learn how to grow the profits of your business. (Valued at $297)</h2>
-      <p>(Next Date... Thursday 22nd January, 2026 - 9am to 12noon)</p>
+      <h2>Come to the <span style="color:#14b8a6;">FREE</span> 3-Hour Path to Profits Workshop to learn how to grow the profits of your business.</h2>
       <a class="cta-button" style="background: var(--blue-700);" href="contact.html">Register Now</a>
-      <div class="cta-note">Seats are limited. Workshop is free (valued at $297).</div>
     </section>
   </div>
 
